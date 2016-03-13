@@ -1,0 +1,33 @@
+---
+server:
+    install: '1'
+    packages: [vim, git, nodejs, npm, imagemagick]
+    timezone: UTC
+    locale: pt_BR.UTF-8
+vagrant_local:
+    install: '1'
+    vm: { base_box: trusty64, hostname: default, ip: 192.168.33.99, memory: '512', sharedfolder: ./, useVagrantCloud: '1', syncType: nfs }
+nginx:
+    install: '1'
+    docroot: /vagrant
+    servername: myApp.vb
+mysql:
+    install: '1'
+    root_password: '123'
+    database: db
+    user: user
+    password: password
+    dump: ''
+rabbitmq:
+    install: '1'
+    user: user
+    password: password
+elasticsearch:
+    install: '1'
+    port: '9200'
+    version: 1.5.2
+php:
+    install: '1'
+    ppa: php5-5.6
+    packages: [php5-cli, php5-intl, php5-mcrypt, php5-mysql]
+
